@@ -67,8 +67,9 @@ def consistifyData(data):
                 if ((df.at[r, o] != apple_daily.at[r2, o2]) or (df.at[r, h] != apple_daily.at[r2, h2]) or (df.at[r, l] != apple_daily.at[r2, l2]) or (df.at[r, c] != apple_daily.at[r2, c2]) or (df.at[r, v] != apple_daily.at[r2, v2])):
 """
 
-@set_schedule(df, 'qualityCheck(df)', 'getStocks.py', '1hr', '[mon,wed,fri,sun]', '2am', '1hr')
+@set_schedule('stockData.csv', 'qualityCheck(df)', 'getStocks.py', '1hr', '[mon,wed,fri,sun]', '2am', '1hr')
 def qualityCheck(data):
+    data = pd.read_csv('stockData.csv')
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
     apple_daily.reset_index(inplace=True)
     apple_daily.rename(columns={'index':'Date'}, inplace=True)
@@ -104,3 +105,5 @@ def qualityCheck(data):
     print("Checking is data is consistent with other sources.....")
     if isConsistent(data, apple_daily)!= True:
         print("Inconsistencies were found in the data")
+    
+    return True
