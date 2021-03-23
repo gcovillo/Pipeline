@@ -5,7 +5,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.arima_model import ARIMA
 import numpy as np
 import datetime
-from mario import setSchedule 
+from mario import set_schedule 
 
 @setSchedule(df, 
              CTRLM = 'createTS(df)', 
