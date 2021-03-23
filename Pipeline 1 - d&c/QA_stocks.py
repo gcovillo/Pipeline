@@ -3,7 +3,7 @@ from IPython.display import display, clear_output
 from pandas_profiling import ProfileReport
 from yahoo_fin.stock_info import get_data 
 import numpy as np
-from mario import setSchedule
+from mario import set_schedule
 
 
 apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
