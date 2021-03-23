@@ -27,4 +27,7 @@ def createTS(data):
         closes.append(np.exp(item))
     df = pd.DataFrame(list(zip(days,closes)), columns = ['Date', 'close'])
     df2 = data[['Date', 'close']].copy(deep=True)
-    return df2.append(df)
+    df3 = df2.append(df)
+    
+    df3.to_csv('TSData.csv')
+    return True
