@@ -7,13 +7,14 @@ import numpy as np
 import datetime
 from mario import set_schedule 
 
-@set_schedule(df, 
-             CTRLM = 'createTS(df)', 
+@set_schedule('stockData.csv', 
+             CTRLM = 'createTS('stockData.csv')', 
              runAfter = 'QA_stocks.py', maxAge = '2hr', 
              windowOpen = '[sun]', 
              windowOpenTime = '3am', 
              widowCloseIn = '1hr')
 def createTS(data):
+    data = pd.read_csv('stockData.csv')
     df_close = data['close']
     df_log = np.log(df_close)
     train_data, test_data = df_log[3:int(len(df_log)*0.85)], df_log[int(len(df_log)*0.85):]
