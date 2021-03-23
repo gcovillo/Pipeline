@@ -8,7 +8,7 @@ import datetime
 from mario import set_schedule 
 
 @set_schedule('stockData.csv', 
-             CTRLM = 'createTS('stockData.csv')', 
+             CTRLM = "createTS('stockData.csv')", 
              runAfter = 'QA_stocks.py', maxAge = '2hr', 
              windowOpen = '[sun]', 
              windowOpenTime = '3am', 
