@@ -36,4 +36,6 @@ def main():
         df = pd.DataFrame(list(zip(dt, o, h, l, c, v, vw)), 
                           columns = ["Date", "Open Price", "Highest Price", "Lowest Price", "Close Price", "Trading Volume", 'Volume Weighted Average Price'])
         df['Date']= pd.to_datetime(df['Date'])
-        return df
+        df.to_csv('stockData.csv')
+        
+        return True
