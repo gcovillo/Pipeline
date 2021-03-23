@@ -27,7 +27,7 @@ def isValid(data):
                 #return False
 
 def isConsistent(df, apple_daily):
-    d, o, h, l, c, v, _ = df.columns
+    _, d, o, h, l, c, v, _ = df.columns
     d2, o2, h2, l2, c2, _, v2, _ = apple_daily.columns
     for r in range(df.shape[0]):
         for r2 in range(apple_daily.shape[0]):
@@ -67,7 +67,12 @@ def consistifyData(data):
                 if ((df.at[r, o] != apple_daily.at[r2, o2]) or (df.at[r, h] != apple_daily.at[r2, h2]) or (df.at[r, l] != apple_daily.at[r2, l2]) or (df.at[r, c] != apple_daily.at[r2, c2]) or (df.at[r, v] != apple_daily.at[r2, v2])):
 """
 
-@set_schedule('stockData.csv', "qualityCheck('stockData.csv')", 'getStocks.py', '1hr', '[mon,wed,fri,sun]', '2am', '1hr')
+@set_schedule('stockData.csv', 
+              CTRLM = "qualityCheck('stockData.csv')",
+              runAfter = 'getStocks.py',maxAge = '1hr', 
+              windowOpen = '[mon,wed,fri,sun]', 
+              windowOpenTime = '2am', 
+              windowCloseIn = '1hr')
 def qualityCheck(data):
     data = pd.read_csv(data)
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
