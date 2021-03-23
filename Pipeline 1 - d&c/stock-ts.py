@@ -7,7 +7,7 @@ import numpy as np
 import datetime
 from mario import set_schedule 
 
-@setSchedule(df, 
+@set_schedule(df, 
              CTRLM = 'createTS(df)', 
              runAfter = 'QA_stocks.py', maxAge = '2hr', 
              windowOpen = '[sun]', 
