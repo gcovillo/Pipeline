@@ -6,6 +6,7 @@ from statsmodels.tsa.arima_model import ARIMA
 import numpy as np
 import datetime
 from mario import set_schedule 
+import warnings 
 
 @set_schedule('stockData.csv', 
              CTRLM = "createTS('stockData.csv')", 
@@ -19,6 +20,7 @@ def createTS(data):
     df_log = np.log(df_close)
     train_data, test_data = df_log[3:int(len(df_log)*0.85)], df_log[int(len(df_log)*0.85):]
     model = ARIMA(train_data, order=(3, 1, 2))  
+    warnings.filterwarnings('ignore', 'statsmodels.tsa.arima_model.ARIMA', FutureWarning)
     fitted = model.fit(disp=-1)  
     forecasts = fitted.forecast(steps=30)
     days = []
@@ -31,4 +33,3 @@ def createTS(data):
     df3 = df2.append(df)
     
     df3.to_csv('TSData.csv')
-    return True
