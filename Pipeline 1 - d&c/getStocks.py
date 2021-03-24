@@ -22,7 +22,6 @@ def main():
         from_ = "2019-02-01"
         to = "2021-02-10"
         resp = client.stocks_equities_aggregates("AAPL", 1, "minute", from_, to, unadjusted=True)
-        print(f"Minute aggregates for {resp.ticker} between {from_} and {to}.")
         for result in resp.results:
             dt.append(ts_to_datetime(result["t"]))
             o.append(result['o'])
