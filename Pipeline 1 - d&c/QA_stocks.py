@@ -78,37 +78,12 @@ def qualityCheck(data):
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
     apple_daily.reset_index(inplace=True)
     apple_daily.rename(columns={'index':'Date'}, inplace=True)
-    print("Checking if data is complete.....")
     if isComplete(data) != True:
-        print("Data contains Null or None Values")
         data = completeData(data)
-        print("Data has been dropped where missing")
-    else:
-        print("Data is complete")
     
-    
-    print("Checking if data is unique.....")
-    if isUnique(data) !=True:
-        print("Data contains non-unique rows")
-        data = uniqueData(data)
-        print("Duplicate rows have been removed")
-    else:
-        print("Data is Unique")
-    
-    print("Checking is data is valid.....")
-    if isValid(data) != True:
-        print("Data contains inconsistent types amongst columns")
-        print("The data may not be valid")
-        error = ValidateColumns(data)
-        if error == "none":
-            print("Data now has consistent types amongst columns")
-        else:
-            print("Validation issue could not be fixed")
-    else:
-        print("Data is Valid")
 
-    print("Checking is data is consistent with other sources.....")
-    if isConsistent(data, apple_daily)!= True:
-        print("Inconsistencies were found in the data")
-    
-    return True
+    if isUnique(data) !=True:
+        data = uniqueData(data)
+        
+    if isValid(data) != True:
+        error = ValidateColumns(data)
