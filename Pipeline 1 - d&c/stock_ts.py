@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.seasonal import seasonal_decompose
-from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.arima.model import ARIMA
 import numpy as np
 import datetime
 from mario import set_schedule 
