@@ -2,26 +2,19 @@ import numpy as np
 import pandas as pd
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.seasonal import seasonal_decompose
-from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.arima_model import ARIMA
 import numpy as np
 import datetime
-from mario import set_schedule 
-import warnings 
+import warnings
+warnings.filterwarnings("ignore")
 
-@set_schedule('stockData.csv', 
-             CTRLM = "createTS('stockData.csv')", 
-             runAfter = 'QA_stocks.py', maxAge = '2hr', 
-             windowOpen = '[sun]', 
-             windowOpenTime = '3am', 
-             widowCloseIn = '1hr')
 def createTS(data):
     data = pd.read_csv('stockData.csv')
     df_close = data['Close Price']
     df_log = np.log(df_close)
     train_data, test_data = df_log[3:int(len(df_log)*0.85)], df_log[int(len(df_log)*0.85):]
-    model = ARIMA(train_data, order=(3, 1, 2))  
-
-    fitted = model.fit(disp=0)  
+    model = ARIMA(train_data, order=(3, 1, 2))
+    fitted = model.fit(disp=0)
     forecasts = fitted.forecast(steps=30)
     days = []
     closes = []
@@ -31,5 +24,7 @@ def createTS(data):
     df = pd.DataFrame(list(zip(days,closes)), columns = ['Date', 'Close Price'])
     df2 = data[['Date', 'Close Price']].copy(deep=True)
     df3 = df2.append(df)
-    
+
     df3.to_csv('TSData.csv')
+
+
