@@ -20,10 +20,8 @@ def createTS(data):
     df_log = np.log(df_close)
     train_data, test_data = df_log[3:int(len(df_log)*0.85)], df_log[int(len(df_log)*0.85):]
     model = ARIMA(train_data, order=(3, 1, 2))  
-    warnings.filterwarnings('ignore', 'statsmodels.tsa.arima_model.ARMA', FutureWarning)
-    warnings.filterwarnings('ignore', 'statsmodels.tsa.arima_model.ARIMA', FutureWarning)
-    warnings.warn(ARIMA_DEPRECATION_WARN, FutureWarning)
-    fitted = model.fit(disp=-1)  
+
+    fitted = model.fit(disp=0)  
     forecasts = fitted.forecast(steps=30)
     days = []
     closes = []
