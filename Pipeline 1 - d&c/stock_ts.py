@@ -8,8 +8,15 @@ import datetime
 import warnings
 warnings.filterwarnings("ignore")
 
+
+@set_schedule('stockData.csv', 
+              CTRLM = "createTS(data)",
+              runAfter = 'QA_stocks.py', maxAge = '1hr', 
+              windowOpen = '[mon,wed,fri,sun]', 
+              windowOpenTime = '4am', 
+              windowCloseIn = '1hr')
 def createTS(data):
-    data = pd.read_csv('stockData.csv')
+    data = pd.read_csv(data)
     df_close = data['Close Price']
     df_log = np.log(df_close)
     train_data, test_data = df_log[3:int(len(df_log)*0.85)], df_log[int(len(df_log)*0.85):]
