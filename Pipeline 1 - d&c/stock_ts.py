@@ -6,6 +6,7 @@ from statsmodels.tsa.arima_model import ARIMA
 import numpy as np
 import datetime
 import warnings
+from mario import set_schedule
 warnings.filterwarnings("ignore")
 
 
