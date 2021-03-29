@@ -14,6 +14,12 @@ def ts_to_datetime(ts) -> str:
 
 def main():
     key = 'Evy8nViLZhZNYgsyU13tSrtn42qRTKci'
+    
+    # Random Log File
+    file1 = open("log.txt", "a")  # append mode
+    file1.write("This is a log file")
+    file1.write("loggy  the log log")
+    file1.close()
 
     # RESTClient can be used as a context manager to facilitate closing the underlying http session
     # https://requests.readthedocs.io/en/master/user/advanced/#session-objects
