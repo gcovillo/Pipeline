@@ -43,4 +43,4 @@ def main():
         df['Date']= pd.to_datetime(df['Date'])
         df.to_csv('stockData.csv')
         
-        return True
+ 
