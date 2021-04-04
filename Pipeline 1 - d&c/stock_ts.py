@@ -15,7 +15,8 @@ warnings.filterwarnings("ignore")
               runAfter = 'QA_stocks.py', maxAge = '1hr', 
               windowOpen = '[mon,wed,fri,sun]', 
               windowOpenTime = '4am', 
-              windowCloseIn = '1hr')
+              windowCloseIn = '1hr',
+             runAt = '4am')
 def createTS(data):
     data = pd.read_csv(data)
     df_close = data['Close Price']
