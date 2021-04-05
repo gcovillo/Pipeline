@@ -73,7 +73,7 @@ def consistifyData(data):
               windowOpen = "['mon','wed','fri','sun']", 
               windowOpenTime = '2am', 
               windowCloseIn = '1hr',
-              runAt = '2am')
+              runAt = 'None')
 def qualityCheck(data):
     data = pd.read_csv(data)
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
