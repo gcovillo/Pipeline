@@ -6,8 +6,6 @@ run-at None
 """
 
 
-
-
 import pandas as pd
 from polygon import RESTClient
 from IPython.display import display
