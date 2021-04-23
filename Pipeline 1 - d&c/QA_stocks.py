@@ -67,7 +67,6 @@ def consistifyData(data):
                 foundDateMatch = True
                 if ((df.at[r, o] != apple_daily.at[r2, o2]) or (df.at[r, h] != apple_daily.at[r2, h2]) or (df.at[r, l] != apple_daily.at[r2, l2]) or (df.at[r, c] != apple_daily.at[r2, c2]) or (df.at[r, v] != apple_daily.at[r2, v2])):
 """
-
 @set_schedule('stockData.csv', 
               CTRLM = "qualityCheck('stockData.csv')",
               runAfter = 'getStocks.py', maxAge = '1hr', 
