@@ -9,11 +9,11 @@ import warnings
 from mario import set_schedule
 warnings.filterwarnings("ignore")
 
-@set_schedule('stockData.csv', 
+@set_schedule('stockData.csv',
               CTRLM = "createTS('stockData.csv')",
-              runAfter = 'QA_stocks.py', maxAge = '1hr', 
-              windowOpen = "['mon','wed','fri','sun']", 
-              windowOpenTime = '4am', 
+              runAfter = 'QA_stocks2.py', maxAge = '1hr', 
+              windowOpen = "['mon','wed','fri','sun']",
+              windowOpenTime = '4am',
               windowCloseIn = '1hr',
              runAt = '4am')
 def createTS(data):
@@ -34,5 +34,3 @@ def createTS(data):
     df3 = df2.append(df)
 
     df3.to_csv('TSData.csv')
-
-
