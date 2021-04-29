@@ -10,9 +10,11 @@ import pandas as pd
 from polygon import RESTClient
 from IPython.display import display
 import datetime
+import os
 def ts_to_datetime(ts) -> str:
     return datetime.datetime.fromtimestamp(ts / 1000.0).strftime('%Y-%m-%d %H:%M')
 
 def main():
     x = 'this is fake'
     b = 'this is just to test'
+    os.system('cp outputs/stockData.csv stockData.csv')
