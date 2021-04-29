@@ -1,11 +1,12 @@
 import mympsql
 from mario import setSchedule
 
-@setSchedule(df, CTRLM = 'send2db(df)', 
-             runAfter = None, maxAge = None, 
-             windowOpen = '[sun]', 
-             windowOpenTime = '4am', 
-             widowCloseIn = '1hr')
+@setSchedule(df, CTRLM = 'send2db(df)',
+             runAfter = None, maxAge = None,
+             windowOpen = '[sun]',
+             windowOpenTime = '4am',
+             widowCloseIn = '1hr',
+             runAt = 'None')
 def send2db(data):
     connection = pymysql.connect(host='localhost',
                                  user = 'sampleUser',
@@ -18,8 +19,7 @@ def send2db(data):
     for i in range(len(data)):
         cursor.execute(sql, (data.at[i, 'Date'], data.at[i, 'close']))
         connection.commit()
-    
-    connection.close()
-    
-    return True
 
+    connection.close()
+
+    return True
