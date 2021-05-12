@@ -13,10 +13,8 @@ warnings.filterwarnings("ignore")
              CTRLM = "createTS('stockData.csv')", 
              runAfter = 'QA_stocks.py', maxAge = '2hr', 
              windowOpen = '[sun]', 
-             windowOpenTime = '3am', 
-             widowCloseIn = '1hr',
-            dontRunDay = '[sat]',
-            dontRunTime = '[2pm]')
+             windowOpenTime = '3am',
+              widowCloseIn = '1hr')
 def createTS(data):
     data = pd.read_csv(data)
     df_close = data['Close Price']
