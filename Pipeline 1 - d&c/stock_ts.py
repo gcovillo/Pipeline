@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore")
              runAfter = 'QA_stocks.py', maxAge = '2hr', 
              windowOpen = '[sun]', 
              windowOpenTime = '3am',
-             runat: '4am',
+             runAt: '4am',
               widowCloseIn = '1hr')
 def createTS(data):
     data = pd.read_csv(data)
