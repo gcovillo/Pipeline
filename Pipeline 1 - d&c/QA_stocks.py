@@ -66,7 +66,13 @@ def consistifyData(data):
                 if ((df.at[r, o] != apple_daily.at[r2, o2]) or (df.at[r, h] != apple_daily.at[r2, h2]) or (df.at[r, l] != apple_daily.at[r2, l2]) or (df.at[r, c] != apple_daily.at[r2, c2]) or (df.at[r, v] != apple_daily.at[r2, v2])):
 """
 
-@set_schedule('stockData.csv', "qualityCheck('stockData.csv')", 'getStocks.py', '1hr', '[mon,wed,fri,sun]', '2am', '1hr', 'None', 'tue', 'None')
+@set_schedule('stockData.csv', 
+              CTRLM = "qualityCheck('stockData.csv')",
+              runAfter = 'getStocks.py', maxAge = '1hr', 
+              windowOpen = "['mon','wed','fri','sun']", 
+              windowOpenTime = '2am', 
+              windowCloseIn = '1hr',
+              runAt = 'None')
 def qualityCheck(data):
     data = pd.read_csv(data)
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
