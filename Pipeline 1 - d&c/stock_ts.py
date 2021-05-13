@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 
 @set_schedule('stockData.csv',
               CTRLM = "createTS('stockData.csv')",
-              runAfter = 'QA_stocks2.py', maxAge = '1hr', 
+              runAfter = 'QA_stocks.py', maxAge = '1hr', 
               windowOpen = "['mon','wed','fri','sun']",
               windowOpenTime = '4am',
               windowCloseIn = '1hr',
