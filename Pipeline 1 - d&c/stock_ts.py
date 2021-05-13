@@ -9,16 +9,13 @@ import warnings
 from mario import set_schedule
 warnings.filterwarnings("ignore")
 
-
-@set_schedule('stockData.csv', 
-              CTRLM = "qualityCheck('stockData.csv')",
-              runAfter = 'getStocks.py', maxAge = '1hr', 
-              windowOpen = '[sun]', 
-              windowOpenTime = '2am', 
+@set_schedule('stockData.csv',
+              CTRLM = "createTS('stockData.csv')",
+              runAfter = 'QA_stocks2.py', maxAge = '1hr', 
+              windowOpen = "['mon','wed','fri','sun']",
+              windowOpenTime = '4am',
               windowCloseIn = '1hr',
-              runAt = '4am'
-              dontRunDay = '[sat]',
-              dontRunTime = '[2pm]')
+             runAt = '4am')
 def createTS(data):
     data = pd.read_csv(data)
     df_close = data['Close Price']
