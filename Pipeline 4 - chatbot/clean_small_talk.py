@@ -33,4 +33,4 @@ def clean_small_talk():
                                   'intent': 'small_talk',
                                   'response_array': bot_response})
 
-    small_talk_df.to_csv('smallTalk.csv')
+    small_talk_df.to_csv('MarioDir/smallTalk.csv')

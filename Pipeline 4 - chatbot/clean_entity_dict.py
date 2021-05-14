@@ -46,4 +46,4 @@ def clean_entity_dict():
     entity_df = pd.DataFrame({'Entityname': entities,
                               'values': accepted_entities})
 
-    entity_df.to_csv('entityDict.csv')
+    entity_df.to_csv('MarioDir/entityDict.csv')

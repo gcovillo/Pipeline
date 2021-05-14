@@ -37,4 +37,4 @@ def clean_entity_regex():
     regex_df = pd.DataFrame({'Entityname': entity_names,
                              'regex_array': regex_arrays})
 
-    regex_df.to_csv('entityRegex.csv')
+    regex_df.to_csv('MarioDir/entityRegex.csv')
