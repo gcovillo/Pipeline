@@ -12,7 +12,7 @@ import os
 
 def clean_faq_files():
     faq_files = []
-    folder_path = "home/ubuntu/test/data/raw/v001/faqs/"
+    folder_path = "/home/ubuntu/test/data/raw/v001/faqs"
     folder = os.listdir(folder_path)
     for file in folder:
         if 'FAQ' in file:

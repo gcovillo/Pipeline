@@ -10,7 +10,7 @@ import os
 
 
 def get_intent_data():
-    folder_path = "home/ubuntu/test/data/raw/v001/Intent Data/"
+    folder_path = "/home/ubuntu/test/data/raw/v001/Intent Data"
     folder = os.listdir(folder_path)
 
     intents = []

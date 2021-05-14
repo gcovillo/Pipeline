@@ -11,7 +11,7 @@ import os
 
 
 def clean_small_talk():
-    path = "home/ubuntu/test/data/raw/v001/SmallTalk/smalltalk.txt"
+    path = "/home/ubuntu/test/data/raw/v001/SmallTalk/smalltalk.txt"
     small_talk = open(path, "r")
     small_talk = small_talk.readlines()
 
