@@ -42,6 +42,3 @@ def clean_trained_entities():
     # pickle.dump(a, outfile)
 
     trained_entities_df.to_csv('trained_entities.csv')
-
-
-clean_trained_entities()

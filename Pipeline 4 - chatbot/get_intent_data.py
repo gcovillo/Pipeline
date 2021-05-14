@@ -60,5 +60,3 @@ def get_intent_data():
 
     # return intent_df, intent_entities
 
-
-get_intent_data()    

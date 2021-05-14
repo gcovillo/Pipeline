@@ -68,6 +68,3 @@ def clean_faq_files():
                             'response_array': answers})
 
     faqs_df.to_csv('faqs.csv')
-
-
-clean_faq_files()

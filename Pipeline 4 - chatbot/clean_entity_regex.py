@@ -38,6 +38,3 @@ def clean_entity_regex():
                              'regex_array': regex_arrays})
 
     regex_df.to_csv('entityRegex.csv')
-
-
-clean_entity_regex()

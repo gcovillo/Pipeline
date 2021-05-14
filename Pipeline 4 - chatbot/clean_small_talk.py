@@ -33,6 +33,3 @@ def clean_small_talk():
                                   'response_array': bot_response})
 
     small_talk_df.to_csv('smallTalk.csv')
-
-
-clean_small_talk()

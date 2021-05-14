@@ -47,6 +47,3 @@ def clean_entity_dict():
                               'values': accepted_entities})
 
     entity_df.to_csv('entityDict.csv')
-
-
-clean_entity_dict()
