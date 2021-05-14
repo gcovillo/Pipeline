@@ -13,7 +13,7 @@ def get_intent_data():
     true_path = (os.path.abspath(os.curdir))
     os.chdir('..')
     os.chdir('..')
-    folder_path = "test/data/raw/v001/Intent Data"
+    folder_path = "data/raw/v001/Intent Data"
     folder = os.listdir(folder_path)
 
     intents = []
