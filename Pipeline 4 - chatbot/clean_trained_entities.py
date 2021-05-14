@@ -16,7 +16,7 @@ def clean_trained_entities():
     entity_names = []
     values = []
     os.chdir('..')
-    folder_path = "data/raw/v001/Entity Data"
+    folder_path = "data/raw/v001/Entity Data/"
     folder = os.listdir(folder_path)
     for file in folder:
         if 'samples' in file:
