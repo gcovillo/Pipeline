@@ -10,11 +10,8 @@ import os
 
 
 def get_intent_data():
-    true_path = (os.path.abspath(os.curdir))
     os.chdir('..')
-    os.chdir('..')
-    print(os.path.abspath(os.curdir))
-    folder_path = "data/raw/v001/Intent Data"
+    folder_path = "data/raw/v001/Intent Data/"
     folder = os.listdir(folder_path)
 
     intents = []
@@ -59,8 +56,8 @@ def get_intent_data():
                                     'intent': intents2,
                                     'entities': entities})
 
-    intent_df.to_csv(true_path + 'IntentData.csv')
-    intent_entities.to_csv(true_path + 'IntentEntities.csv')
+    intent_df.to_csv('IntentData.csv')
+    intent_entities.to_csv('IntentEntities.csv')
 
     # return intent_df, intent_entities
 
