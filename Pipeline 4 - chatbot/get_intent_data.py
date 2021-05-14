@@ -11,7 +11,7 @@ import time
 
 
 def get_intent_data():
-    time.sleep(60)
+    time.sleep(20)
     os.chdir('..')
     folder_path = "data/raw/v001/Intent Data/"
     folder = os.listdir(folder_path)
