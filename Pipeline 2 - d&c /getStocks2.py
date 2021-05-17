@@ -18,3 +18,4 @@ def main():
     x = 'this is fake'
     b = 'this is just to test'
     os.system('cp outputs/stockData.csv stockData.csv')
+
