@@ -69,7 +69,7 @@ def consistifyData(data):
 @set_schedule('stockData.csv', 
               CTRLM = "qualityCheck('stockData.csv')",
               runAfter = 'getStocks.py', maxAge = '1hr', 
-              windowOpen = "['mon', 'tue', 'wed','fri','sun']",
+              windowOpen = "['mon','tue','wed','fri','sun']",
               windowOpenTime = '2am', 
               windowCloseIn = '1hr',
               runAt = 'None',
