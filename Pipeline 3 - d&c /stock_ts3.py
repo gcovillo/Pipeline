@@ -10,6 +10,7 @@ from mario import set_schedule
 warnings.filterwarnings("ignore")
 
 
+
 @set_schedule('stockData.csv',
               CTRLM = "createTS('stockData.csv')",
               runAfter = 'QA_stocks3.py', maxAge = '1hr', 

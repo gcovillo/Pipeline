@@ -9,7 +9,6 @@ import pandas as pd
 import os
 
 
-
 def get_intent_data():
     os.chdir('..')
     folder_path = "data/raw/v001/Intent Data/"
