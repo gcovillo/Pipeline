@@ -39,15 +39,14 @@ def clean_faq_files():
         for line in faq:
             if ('#' in line[0]) or (line.replace(" ", "") == "\n") or ('[questions]' in line) or ('prefix' in line):
                 continue
-            elif 'topic' in line:
+            elif 'topic' in line.lower():
                 topic = line.replace('topic=', '').replace("\n", "")
-            elif 'subtop' in line:
+            elif 'subtop' in line.lower():
                 st = line.replace("\n", "").split("=")
                 subtopic = st[1]
-            elif 'faq' in line:
-                faq_id = line.replace(" ", "").replace("\n", "").replace("[", "").replace("]", "").replace("faq:ID_",
-                                                                                                           "")
-            elif 'answer' in line:
+            elif 'faq' in line.lower():
+                faq_id = line.replace(" ", "").replace("\n", "").replace("[", "").replace("]", "").replace("faq:ID_",                                                                                           "")
+            elif 'answer' in line.lower():
                 answer = line.split("</channel>")
                 answer = answer[-1].replace("</segment>:", "")
                 for q in temp_questions:
