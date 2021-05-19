@@ -5,6 +5,9 @@ Window-close-in 1hr
 run-after clean_trained_entities.py
 run-at 1am
 """
+import pandas as pd
+import os
+
 
 def get_unique_entities():
     df = pd.read_csv('../data/cleaned/IntentData.csv')
