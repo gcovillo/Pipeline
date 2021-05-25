@@ -8,4 +8,6 @@ run-at 1am
 """
 
 def test():
-    print("This is fake")
+    x = 7
+    y = 10
+    x * y 
