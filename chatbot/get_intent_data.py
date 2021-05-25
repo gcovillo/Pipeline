@@ -57,8 +57,8 @@ def get_intent_data():
                                     'intent': intents2,
                                     'entities': entities})
 
-    intent_df.to_csv('MarioDir/IntentData.csv')
-    intent_entities.to_csv('MarioDir/IntentEntities.csv')
+    intent_df.to_csv('intent_data.csv')
+    intent_entities.to_csv('intent_entities.csv')
 
     # return intent_df, intent_entities
 

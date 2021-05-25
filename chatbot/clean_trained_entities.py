@@ -41,4 +41,4 @@ def clean_trained_entities():
     # outfile = open(filename,'wb')
     # pickle.dump(a, outfile)
 
-    trained_entities_df.to_csv('MarioDir/trained_entities.csv')
+    trained_entities_df.to_csv('trained_entities.csv')

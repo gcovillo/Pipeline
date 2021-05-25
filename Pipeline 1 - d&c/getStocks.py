@@ -4,7 +4,7 @@ Window-open mon,wed,thur,fri,sat,sun 11pm
 Window-close-in 1hr
 run-at none
 dont-run-time ['11:30pm']
-group-namestock_pipelines
+group-name stock_pipelines
 owner Gillian Covillo
 """
 

@@ -67,4 +67,4 @@ def clean_faq_files():
                             'subtopics': subtopics,
                             'response_array': answers})
 
-    faqs_df.to_csv('MarioDir/faqs.csv')
+    faqs_df.to_csv('faqs.csv')
