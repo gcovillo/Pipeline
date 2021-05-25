@@ -3,7 +3,6 @@ CTRL-M get_unique_intents()
 Window-open mon,tue,wed,thur,fri,sat,sun 1am
 Window-close-in 1hr
 run-after clean_trained_entities.py
-run-at 1am
 """
 import pandas as pd
 import os
