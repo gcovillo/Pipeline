@@ -12,7 +12,6 @@ import os
 
 def clean_faq_files():
     faq_files = []
-    os.chdir('..')
     folder_path = "data/raw/v001/faqs/"
     folder = os.listdir(folder_path)
     for file in folder:

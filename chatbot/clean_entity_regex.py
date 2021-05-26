@@ -12,7 +12,6 @@ import os
 
 def clean_entity_regex():
     regex = []
-    os.chdir('..')
     folder_path = "data/raw/v001/Entity Data/"
     folder = os.listdir(folder_path)
     for file in folder:

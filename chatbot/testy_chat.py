@@ -10,4 +10,4 @@ run-at 1am
 def test():
     x = 7
     y = 10
-    x * y 
+    x * y

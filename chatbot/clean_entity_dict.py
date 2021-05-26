@@ -13,8 +13,6 @@ import os
 
 def clean_entity_dict():
     dicts = []
-    other = []
-    os.chdir('..')
     folder_path = "data/raw/v001/Entity Data/"
     folder = os.listdir(folder_path)
     for file in folder:

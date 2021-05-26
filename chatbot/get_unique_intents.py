@@ -9,7 +9,7 @@ import os
 
 
 def get_unique_intents():
-    df = pd.read_csv('../data/cleaned/IntentData.csv')
+    df = pd.read_csv('data/cleaned/IntentData.csv')
     words = [] 
     word_dict = [] 
 
