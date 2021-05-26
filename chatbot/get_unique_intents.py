@@ -33,4 +33,4 @@ def get_unique_intents():
     unique_intents = pd.DataFrame({'Unique Word': words,
                                    'Use_Case | Intent': word_dict})
 
-    unique_intents.to_csv('data/cleaned/unique_intents.csv')
+    unique_intents.to_csv('unique_intents.csv')
