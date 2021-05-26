@@ -10,9 +10,9 @@ import numpy as np
 
 def merge_intents():
     NaN = np.nan
-    intent_data = pd.read_csv("../data/cleaned/IntentData.csv")
+    intent_data = pd.read_csv("../data/cleaned/intent_data.csv")
     faq_data = pd.read_csv("../data/cleaned/faqs.csv")
-    smalltalk_data = pd.read_csv("../data/cleaned/smallTalk.csv")
+    smalltalk_data = pd.read_csv("../data/cleaned/small_talk.csv")
     
     # drop unnecessary columns/merge data
     # use_case | intent | sentence | answer
