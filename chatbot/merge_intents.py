@@ -1,5 +1,5 @@
 """
-CTRL-M get_unique_intents()
+CTRL-M merge_intents()
 Window-open mon,tue,wed,thur,fri,sat,sun 12:30am
 Window-close-in 1hr
 run-after clean_trained_entities.py
@@ -8,7 +8,7 @@ run-after clean_trained_entities.py
 import pandas as pd
 
 
-def merge_intents() :
+def merge_intents():
     NaN = np.nan
     intent_data = pd.read_csv("../data/cleaned/IntentData.csv")
     faq_data = pd.read_csv("../data/cleaned/faqs.csv")
