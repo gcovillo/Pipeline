@@ -5,6 +5,7 @@ Window-close-in 1hr
 run-after get_unique_intents.py
 run-at 1am
 """
+import pandas as pd
 
 def unique_word_intent_subintent_index():
     # read in data
