@@ -6,7 +6,7 @@ run-after clean_trained_entities.py
 """
 
 import pandas as pd
-
+import numpy as np
 
 def merge_intents():
     NaN = np.nan
