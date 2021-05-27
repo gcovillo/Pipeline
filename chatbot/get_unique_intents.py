@@ -3,6 +3,7 @@ CTRL-M get_unique_intents()
 Window-open mon,tue,wed,thur,fri,sat,sun 12:30am
 Window-close-in 1hr
 run-after merge_intents.py
+run-at 1am
 """
 
 import pandas as pd
@@ -16,8 +17,6 @@ def get_unique_intents():
     word_dict = []
 
     for i, sentence in enumerate(df['sentence']):
-        dont_do = 0
-        temp_dict = {}
         for word in sentence.split(" "):
             use_case = df.at[i, 'use_case']
             intent = df.at[i, 'intent']
