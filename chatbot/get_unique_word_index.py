@@ -9,7 +9,8 @@ import pandas as pd
 
 def unique_word_intent_subintent_index():
     # read in data
-    df = pd.read_csv('merged_intent_data.csv')
+    df = pd.read_csv('merged_intent_data.csv', low_memory = False, dtype={'use_case': 'string', 'intent': 'string',
+                                                                          'sentence': 'string', 'answer': 'string')
     mixed = {}
     words = []
     intents = []

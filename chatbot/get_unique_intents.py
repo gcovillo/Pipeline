@@ -10,7 +10,8 @@ import os
 
 
 def get_unique_intents():
-    df = pd.read_csv('merged_intent_data.csv')
+    df = pd.read_csv('merged_intent_data.csv', low_memory = False, dtype={'use_case': 'string', 'intent': 'string',
+                                                                          'sentence': 'string', 'answer': 'string')
     words = []
     word_dict = []
 
