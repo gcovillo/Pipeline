@@ -1,5 +1,5 @@
 """
-CTRL-M get_unique_intents()
+function get_unique_intents()
 Window-open mon,tue,wed,thur,fri,sat,sun 12:30am
 Window-close-in 1hr
 run-after merge_intents.py

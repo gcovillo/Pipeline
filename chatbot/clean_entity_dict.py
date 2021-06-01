@@ -1,5 +1,5 @@
 """
-CTRL-M clean_entity_dict()
+function clean_entity_dict()
 Window-open mon,tue,wed,thur,fri,sat,sun 12:10am
 Window-close-in 1hr
 run-after clean_faq_files.py

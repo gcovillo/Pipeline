@@ -1,5 +1,5 @@
 """
-CTRL-M unique_word_intent_subintent_index()
+function unique_word_intent_subintent_index()
 Window-open mon,tue,wed,thur,fri,sat,sun 1am
 Window-close-in 1hr
 run-after get_unique_intents.py

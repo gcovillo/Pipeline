@@ -1,5 +1,5 @@
 """
-CTRL-M clean_trained_entities()
+function clean_trained_entities()
 Window-open mon,tue,wed,thur,fri,sat,sun 12:50am
 Window-close-in 1hr
 run-after clean_entity_regex.py
