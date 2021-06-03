@@ -19,6 +19,7 @@ warnings.filterwarnings("ignore")
              runAt = '4am')
 def createTS(data):
     data = pd.read_csv(data)
+    data.dropna(inplace=True)
     df_close = data['Close Price']
     df_log = np.log(df_close)
     train_data, test_data = df_log[3:int(len(df_log)*0.85)], df_log[int(len(df_log)*0.85):]
