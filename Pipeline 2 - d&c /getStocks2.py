@@ -5,7 +5,7 @@ Window-close-in 1h
 dont-run-time ['11:30pm']
 group_name stock_pipelines
 owner Gillian Covillo
-pipeline = 'gillians_stocks'
+pipeline = 'gillians_stocks2'
 """
 
 import pandas as pd
