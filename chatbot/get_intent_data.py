@@ -3,6 +3,9 @@ function get_intent_data()
 Window-open mon,tue,wed,thur,fri,sat,sun 11pm
 Window-close-in 1hr
 run-at none
+group_name chatbot
+owner Siva Sai Nellore
+pipeline = 'c3p0_chatbot'
 """
 
 
