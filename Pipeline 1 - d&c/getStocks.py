@@ -1,12 +1,13 @@
 """ 
 function main()
-Window-open mon,tue,wed,thur,fri,sat 11pm
+Window-open mon,tue,wed,thur,fri,sat,sun 11pm
 Window-close-in 1h
 dont-run-time ['11:30pm']
 group_name stock_pipelines
 owner Gillian Covillo
 pipeline = 'gillians_stocks'
 """
+
 
 import pandas as pd
 from polygon import RESTClient
