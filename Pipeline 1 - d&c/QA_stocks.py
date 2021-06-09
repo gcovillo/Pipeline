@@ -73,7 +73,7 @@ def consistifyData(data):
               windowOpen = "['mon','wed','fri','sun']",
               windowOpenTime = '2am', 
               windowCloseIn = '1hr',
-              runAt = 'None',
+              runAt = 'none',
               dontRunDay = '[sat]',
               dontRunTime = '[2pm]')
 def qualityCheck(data):
