@@ -30,6 +30,7 @@ def main():
     df.rename(columns={'index': 'Date', 'open': 'Open Price', 'high': 'Highest Price', 'low': "Lowest Price", 'close': 'Close Price', 'adjclose': 'Trading Volume', 'volume': 'Volume Weighted Average Price'}, inplace=True)
 
 
+
     df.to_csv('stockData.csv')
         
  
