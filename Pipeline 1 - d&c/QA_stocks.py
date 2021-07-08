@@ -75,7 +75,7 @@ def consistifyData(data):
               windowCloseIn = '1hr',
               runAt = 'none',
               dontRunDay = '[sat]',
-              dontRunTime = '[2pm, 2am, !<5am, !>3am]')
+              dontRunTime = "['2pm', '2am', '!<5am', '!>3am']")
 def qualityCheck(data):
     data = pd.read_csv(data)
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
