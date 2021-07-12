@@ -75,6 +75,9 @@ def consistifyData(data):
               windowCloseIn = '1hr',
               runAt = 'none',
               dontRunDay = '[sat]',
+              group_name = 'stock_pipelines',
+              owner = 'Gillian Covillo',
+              pipeline = 'gillians_stocks',
               resource_type = 't2',
               dontRunTime = "['2pm','11pm','!<10am]','!>11:30pm')")
 def qualityCheck(data):
