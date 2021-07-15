@@ -1,9 +1,10 @@
 import pandas as pd
 from IPython.display import display, clear_output
 from pandas_profiling import ProfileReport
-from yahoo_fin.stock_info import get_data 
+from yahoo_fin.stock_info import get_data
 import numpy as np
 from mario import set_schedule
+
 
 
 apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
@@ -66,20 +67,13 @@ def consistifyData(data):
                 foundDateMatch = True
                 if ((df.at[r, o] != apple_daily.at[r2, o2]) or (df.at[r, h] != apple_daily.at[r2, h2]) or (df.at[r, l] != apple_daily.at[r2, l2]) or (df.at[r, c] != apple_daily.at[r2, c2]) or (df.at[r, v] != apple_daily.at[r2, v2])):
 """
-
-@set_schedule('stockData.csv', 
+@set_schedule('stockData.csv',
               function = "qualityCheck('stockData.csv')",
-              runAfter = 'getStocks.py', maxAge = '1hr', 
+              runAfter = 'getStocks2.py', maxAge = '1hr', 
               windowOpen = "['mon','wed','fri','sun']",
-              windowOpenTime = '2am', 
+              windowOpenTime = '2am',
               windowCloseIn = '1hr',
-              runAt = 'none',
-              dontRunDay = '[sat]',
-              group_name = 'stock_pipelines',
-              owner = 'Gillian Covillo',
-              pipeline = 'gillian_stocks',
-              resource_type = 't2',
-              dontRunTime = "['2pm','11pm','!<10am]','!>11:30pm')")
+              runAt = 'None')
 def qualityCheck(data):
     data = pd.read_csv(data)
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
@@ -87,10 +81,10 @@ def qualityCheck(data):
     apple_daily.rename(columns={'index':'Date'}, inplace=True)
     if isComplete(data) != True:
         data = completeData(data)
-    
+
 
     if isUnique(data) !=True:
         data = uniqueData(data)
-        
+
     if isValid(data) != True:
         error = ValidateColumns(data)
