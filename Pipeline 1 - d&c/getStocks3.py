@@ -6,7 +6,9 @@ dont-run-time ['11:30pm', '12pm', '!<9am']
 """
 
 
+
 import pandas as pd
+import numpy as np
 from polygon import RESTClient
 from IPython.display import display
 import datetime
