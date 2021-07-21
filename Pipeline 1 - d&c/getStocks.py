@@ -5,8 +5,6 @@ Window-close-in 1h
 dont-run-time ['11:30pm', '12pm', '!<9am']
 """
 
-
-
 import pandas as pd
 from polygon import RESTClient
 from IPython.display import display
