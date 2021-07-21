@@ -8,8 +8,10 @@ run-at 4am
 
 import pandas as pd
 import numpy as np
+import time
 
 def merge_intents():
+    time.sleep(90)
     NaN = np.nan
     intent_data = pd.read_csv("intent_data.csv")
     faq_data = pd.read_csv("faqs.csv")
