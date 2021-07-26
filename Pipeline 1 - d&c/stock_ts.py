@@ -9,8 +9,6 @@ import warnings
 from mario import set_schedule
 warnings.filterwarnings("ignore")
 
-#flink
-
 @set_schedule('stockData.csv',
               function="createTS('stockData.csv')",
               runAfter='QA_stocks.py', maxAge='1hr',
