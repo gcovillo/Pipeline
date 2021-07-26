@@ -8,6 +8,7 @@ run-at None
 
 import pandas as pd
 import os
+import numpy
 
 
 def clean_faq_files():
