@@ -3,7 +3,6 @@ function merge_intents()
 Window-open mon,tue,wed,thur,fri,sat,sun 12:30am
 Window-close-in 1hr
 run-after clean_trained_entities.py
-run-at 4am
 """
 
 import pandas as pd
