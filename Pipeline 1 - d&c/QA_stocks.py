@@ -58,8 +58,7 @@ def ValidateColumns(data):
         return "ValidationError"
 
 
-@set_schedule('stockData.csv', 
-              function = "qualityCheck('stockData.csv')",
+@set_schedule(function = "qualityCheck('stockData.csv')",
               runAfter = 'getStocks.py', maxAge = '1hr')
 def qualityCheck(data):
     data = pd.read_csv(data)
