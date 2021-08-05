@@ -3,6 +3,7 @@ function main()
 Window-open mon,tue,wed,thur,fri,sat,sun 11pm
 Window-close-in 1h
 dont-run-time ['11:30pm', '12pm', '!<9am']
+run-after QA_stocks.py
 """
 
 import pandas as pd
