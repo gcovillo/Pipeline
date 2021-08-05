@@ -9,8 +9,13 @@ import warnings
 from mario import set_schedule
 warnings.filterwarnings("ignore")
 
-@set_schedule(function = "createTS('stockData.csv')",
-              runAfter = 'getStocks.py')
+@set_schedule('stockData.csv',
+              function="createTS('stockData.csv')",
+              runAfter='QA_stocks.py', maxAge='1hr',
+              windowOpen="['mon','wed','fri','sun']",
+              windowOpenTime='4am',
+              windowCloseIn='1hr',
+              runAt='4am')
 def createTS(data):
     data = pd.read_csv(data)
     data.dropna(inplace=True)
