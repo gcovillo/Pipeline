@@ -8,13 +8,9 @@ from mario import set_schedule
 def ts_to_datetime(ts) -> str:
     return datetime.datetime.fromtimestamp(ts / 1000.0).strftime('%Y-%m-%d %H:%M')
 
-@set_schedule('stockData.csv',
+@set_schedule(
               function="main()",
-              runAfter='QA_stocks.py', maxAge='1hr',
-              windowOpen="['mon','wed','fri','sun']",
-              windowOpenTime='4am',
-              windowCloseIn='1hr',
-              runAt='4am'
+              runAfter='QA_stocks.py'
               )
 def main():
     # Random Log File
