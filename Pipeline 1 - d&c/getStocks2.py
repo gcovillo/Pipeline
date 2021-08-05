@@ -8,10 +8,8 @@ from mario import set_schedule
 def ts_to_datetime(ts) -> str:
     return datetime.datetime.fromtimestamp(ts / 1000.0).strftime('%Y-%m-%d %H:%M')
 
-@set_schedule(
-              function="main()",
-              runAfter='QA_stocks.py'
-              )
+@set_schedule(function = 'qualityCheck()',
+              runAfter = 'getStocks.py')
 def main():
     # Random Log File
     file1 = open("log.txt", "a")  # append mode
