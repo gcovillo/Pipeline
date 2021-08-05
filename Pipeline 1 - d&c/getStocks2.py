@@ -1,22 +1,18 @@
-""" 
-function main()
-Window-open mon,tue,wed,thur,fri,sat,sun 11pm
-Window-close-in 1h
-dont-run-time ['11:30pm', '12pm', '!<9am']
-run_after QA_stocks.py
-"""
-
 import pandas as pd
 from polygon import RESTClient
 from IPython.display import display
 import datetime
 from yahoo_fin.stock_info import get_data
+from mario import set_schedule
 
 def ts_to_datetime(ts) -> str:
     return datetime.datetime.fromtimestamp(ts / 1000.0).strftime('%Y-%m-%d %H:%M')
 
+@set_schedule(
+    function = "main()",
+    runAfter = QA_stocks.py
+)
 def main():
-
     # Random Log File
     file1 = open("log.txt", "a")  # append mode
     file1.write("This is a log file")
