@@ -1,28 +1,34 @@
+import numpy as np
 import pandas as pd
-from polygon import RESTClient
-from IPython.display import display
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.arima_model import ARIMA
+import numpy as np
 import datetime
-from yahoo_fin.stock_info import get_data
+import warnings
 from mario import set_schedule
-
-def ts_to_datetime(ts) -> str:
-    return datetime.datetime.fromtimestamp(ts / 1000.0).strftime('%Y-%m-%d %H:%M')
+warnings.filterwarnings("ignore")
 
 @set_schedule(function = 'qualityCheck()',
               runAfter = 'getStocks.py')
-def main():
-    # Random Log File
-    file1 = open("log.txt", "a")  # append mode
-    file1.write("This is a log file")
-    file1.write("loggy  the log log")
-    file1.close()
+def createTS(data):
+    data = pd.read_csv(data)
+    data.dropna(inplace=True)
+    df_close = data['Close Price']
+    df_log = np.log(df_close)
+    train_data, test_data = df_log[3:int(len(df_log)*0.85)], df_log[int(len(df_log)*0.85):]
+    model = ARIMA(train_data, order=(3, 1, 2))
+    fitted = model.fit(disp=0)
+    forecasts = fitted.forecast(steps=30)
+    days = []
+    closes = []
+    for i, item in enumerate(forecasts[0]):
+        days.append(data.at[len(data)-1, 'Date'] + str(datetime.timedelta(days=i+1)))
+        closes.append(np.exp(item))
+    df = pd.DataFrame(list(zip(days,closes)), columns = ['Date', 'Close Price'])
+    df2 = data[['Date', 'Close Price']].copy(deep=True)
+    df3 = df2.append(df)
 
-    df = get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date=True, interval="1d")
-    df.reset_index(inplace=True)
-    df.rename(columns={'index': 'Date', 'open': 'Open Price', 'high': 'Highest Price', 'low': "Lowest Price", 'close': 'Close Price', 'adjclose': 'Trading Volume', 'volume': 'Volume Weighted Average Price'}, inplace=True)
+    df3.to_csv('TSData.csv')
 
 
-
-    df.to_csv('stockData.csv')
-        
- 
