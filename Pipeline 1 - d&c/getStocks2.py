@@ -9,7 +9,8 @@ import warnings
 from mario import set_schedule
 warnings.filterwarnings("ignore")
 
-@set_schedule(function = 'qualityCheck()',
+@set_schedule('stockData.csv',
+              function = 'qualityCheck()',
               runAfter = 'getStocks.py')
 def createTS(data):
     data = pd.read_csv(data)
