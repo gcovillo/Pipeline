@@ -56,16 +56,7 @@ def ValidateColumns(data):
         return "none"
     except:
         return "ValidationError"
-"""
-def consistifyData(data):
-    d, o, h, l, c, v, _ = df.columns
-    d2, o2, h2, l2, c2, _, v2, _ = apple_daily.columns
-    for r in range(df.shape[0]):
-        for r2 in range(apple_daily.shape[0]):
-            if df.at[r, d] == apple_daily.at[r2, d2]:
-                foundDateMatch = True
-                if ((df.at[r, o] != apple_daily.at[r2, o2]) or (df.at[r, h] != apple_daily.at[r2, h2]) or (df.at[r, l] != apple_daily.at[r2, l2]) or (df.at[r, c] != apple_daily.at[r2, c2]) or (df.at[r, v] != apple_daily.at[r2, v2])):
-"""
+
 
 @set_schedule('stockData.csv', 
               function = "qualityCheck('stockData.csv')",
