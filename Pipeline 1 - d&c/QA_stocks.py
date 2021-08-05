@@ -60,17 +60,7 @@ def ValidateColumns(data):
 
 @set_schedule('stockData.csv', 
               function = "qualityCheck('stockData.csv')",
-              runAfter = 'getStocks.py', maxAge = '1hr', 
-              windowOpen = "['mon','wed','fri','sun']",
-              windowOpenTime = '2am', 
-              windowCloseIn = '1hr',
-              runAt = 'none',
-              dontRunDay = '[sat]',
-              group_name = 'stock_pipelines',
-              owner = 'Gillian Covillo',
-              pipeline = 'gillian_stocks',
-              resource_type = 't2',
-              dontRunTime = "['2pm','11pm','!<10am]','!>11:30pm')")
+              runAfter = 'getStocks.py', maxAge = '1hr')
 def qualityCheck(data):
     data = pd.read_csv(data)
     apple_daily= get_data("AAPL", start_date="02/10/2019", end_date="2/20/2021", index_as_date = True, interval="1d")
