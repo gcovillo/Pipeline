@@ -8,6 +8,7 @@ owner Gillian Covillo
 pipeline = 'gillians_stocks2'
 """
 
+
 import pandas as pd
 from polygon import RESTClient
 from IPython.display import display
