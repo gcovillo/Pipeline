@@ -5,7 +5,6 @@ Window-close-in 1hr
 run-after clean_faq_files.py
 run-at none
 """
-
 import pandas as pd
 import os
 
