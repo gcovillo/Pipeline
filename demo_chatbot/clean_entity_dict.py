@@ -8,7 +8,6 @@ run-at none
 import pandas as pd
 import os
 
-
 def clean_entity_dict():
     dicts = []
     folder_path = "data/raw/v001/Entity Data/"
