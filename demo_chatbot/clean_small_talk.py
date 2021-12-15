@@ -8,12 +8,14 @@ run-at None
 
 import pandas as pd
 import os
+import time
 
 
 def clean_small_talk():
     path = "data/raw/v001/SmallTalk/smalltalk.txt"
     small_talk = open(path, "r")
     small_talk = small_talk.readlines()
+    time.sleep(120)
 
     user_response = []
     bot_response = []
