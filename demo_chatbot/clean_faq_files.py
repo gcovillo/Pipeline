@@ -2,7 +2,7 @@
 function clean_faq_files()
 Window-open mon,tue,wed,thur,fri,sat,sun 11:40pm
 Window-close-in 1hr
-run-after clean_small_talk.py
+run-after clean_small_talk.py, get_intent_data.py
 run-at None
 """
 

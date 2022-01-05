@@ -1,14 +1,11 @@
-"""
-function get_unique_intents()
-Window-open mon,tue,wed,thur,fri,sat,sun 12:30am
-Window-close-in 1hr
-run-after merge_intents.py
-"""
-
 import pandas as pd
 import os
 
-
+@set_schedule(function = "get_unique_intents()",
+              runAfter = 'merge_intents.py', maxAge = '1hr',
+              windowOpen = "mon,tue,wed,thur,fri,sat,sun",
+              windowOpenTime = '12:30am',
+              windowCloseIn = '1hr')
 def get_unique_intents():
     df = pd.read_csv('merged_intent_data.csv', low_memory = False, dtype={'use_case': 'string', 'intent': 'string',
                                                                           'sentence': 'string', 'answer': 'string'})
