@@ -2,6 +2,7 @@
 function clean_small_talk()
 Window-open mon,tue,wed,thur,fri,sat,sun 11:20pm
 Window-close-in 1hr
+run-after get_intent_data.py
 run-at None
 """
 
