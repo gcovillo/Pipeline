@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+from mario import set_schedule
 
 @set_schedule(function = "get_unique_intents()",
               runAfter = 'merge_intents.py', maxAge = '1hr',
