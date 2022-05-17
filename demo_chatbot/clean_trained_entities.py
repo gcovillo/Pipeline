@@ -6,7 +6,7 @@ window_close_in 1hr
 dont_run_time 4pm
 dont_run_day sun
 group_name chatbot
-owner 'gillian covillo'
+owner gillian covillo
 pipeline c3p0
 run_after clean_entity_regex.py max_age 2 days
 run_at 6pm
