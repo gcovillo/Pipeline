@@ -7,6 +7,7 @@ group_name vitaly_test_group
 owner Vitaly Pankratov
 pipeline = table
 """
+
 import pandas as pd
 
 
