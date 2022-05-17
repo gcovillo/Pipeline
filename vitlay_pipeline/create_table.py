@@ -2,7 +2,7 @@
 """
 function create_table()
 Window-open mon,tue,wed,thur,sun
-Window-close-in 1hr
+Window-close-in 1hr 
 group_name vitaly_test_group
 owner Vitaly Pankratov
 pipeline = table
