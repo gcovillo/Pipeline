@@ -9,7 +9,6 @@ from mario import set_schedule
               runAt = '4pm',
               windowCloseIn = '30min')]
 
-
 def double_table(y):
     df = pd.read_csv('table.csv')
     df = df*y
