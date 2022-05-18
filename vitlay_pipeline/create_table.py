@@ -18,4 +18,4 @@ def create_table():
 
     df = pd.DataFrame(data, columns=columns)
     df.to_csv('table.csv', index=False)
-    time.sleep(120)
+    time.sleep(60)
