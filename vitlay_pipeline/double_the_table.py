@@ -14,3 +14,4 @@ def double_table(y):
     df = pd.read_csv('table.csv')
     df = df*y
     df.to_csv('table.csv', index=False)
+    time.sleep(120)

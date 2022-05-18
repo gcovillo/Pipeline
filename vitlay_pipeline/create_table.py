@@ -9,6 +9,7 @@ pipeline = table
 """
 
 import pandas as pd
+import time
 
 
 def create_table():
@@ -17,3 +18,4 @@ def create_table():
 
     df = pd.DataFrame(data, columns=columns)
     df.to_csv('table.csv', index=False)
+    time.sleep(120)
