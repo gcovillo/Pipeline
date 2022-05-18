@@ -11,3 +11,4 @@ def elongate_table():
     df = pd.read_csv('table.csv')
     df = pd.concat([df,df], ignore_index=True, axis=0)
     df.to_csv('table.csv', index=False)
+    time.sleep(120)
