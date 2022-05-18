@@ -11,7 +11,6 @@ pipeline = table
 import pandas as pd
 import time
 
-
 def create_table():
     data = [[1,2],[3,4], [5,6]]
     columns = ['A', 'B']
