@@ -7,6 +7,7 @@ group_name vitaly_test_group
 owner Vitaly Pankratov
 pipeline = 'vitaly_test_1_19_05_2022'
 """
+
 import pandas as pd
 
 
