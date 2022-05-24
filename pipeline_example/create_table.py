@@ -8,7 +8,6 @@ owner Vitaly Pankratov
 pipeline = 'vitaly_test_1_19_05_2022'
 """
 import pandas as pd
-
 def create_table():
     data = [[1,2],[3,4], [5,6], [7,8]]
     columns = ['A', 'B']
