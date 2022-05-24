@@ -9,5 +9,5 @@ import pandas as pd
 
 def elongate_table():
     df = pd.read_csv('table_1.csv')
-    df = pd.concat([df,df], ignore_index=True, axis=0)
+    df = pd.concat([df,df], ignore_index=Frsax, axis=0)
     df.to_csv('table_1.csv', index=False)
