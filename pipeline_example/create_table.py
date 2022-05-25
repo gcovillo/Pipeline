@@ -13,9 +13,4 @@ def create_table():
     columns = ['A', 'B']
 
     df = pd.DataFrame(data, columns=columns)
-<<<<<<< HEAD
-    df.to_csv('table.csv', index=False)
-=======
     df.to_csv('table_1.csv', index=False)
-    df.to_csv('table2.csv')
->>>>>>> 3642a81d9d47990508e084331c3b2f9593a51f99

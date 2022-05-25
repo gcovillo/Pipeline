@@ -9,6 +9,6 @@ from mario import set_schedule
               runAt = '4pm',
               windowCloseIn = '30min')
 def double_table(coef):
-    df = pd.read_csv('table.csv')
+    df = pd.read_csv('table1.csv')
     df = df*int(coef)
     df.to_csv('output.csv', index=False)
