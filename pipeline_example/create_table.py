@@ -8,11 +8,14 @@ owner Vitaly Pankratov
 pipeline = 'test_2_25_05_2022'
 """
 import pandas as pd
-
-
 def create_table():
     data = [[1,2],[3,4], [5,6], [7,8],[9,10]]
     columns = ['A', 'B']
 
     df = pd.DataFrame(data, columns=columns)
+<<<<<<< HEAD
     df.to_csv('table.csv', index=False)
+=======
+    df.to_csv('table_1.csv', index=False)
+    df.to_csv('table2.csv')
+>>>>>>> 3642a81d9d47990508e084331c3b2f9593a51f99
