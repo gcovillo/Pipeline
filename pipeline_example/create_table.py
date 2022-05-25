@@ -5,7 +5,7 @@ Window-open mon,tue,wed,thur,sun
 Window-close-in 1hr
 group_name vitaly_test_group
 owner Vitaly Pankratov
-pipeline = 'test_2_25_05_2022'
+pipeline = 'test_3_25_05_2022'
 """
 import pandas as pd
 def create_table():
@@ -13,4 +13,4 @@ def create_table():
     columns = ['A', 'B']
 
     df = pd.DataFrame(data, columns=columns)
-    df.to_csv('table_1.csv', index=False)
+    df.to_csv('table_2.csv', index=False)
